@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Repository</title>
+    <!-- ADD CSS EXTERNAL FILE -->
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    
+   <div class="tab-wrap">    
+    
+    <ul class="tab_link list_inline">        
+        <li><a href="#tab1" class="active">Tab 1</a></li>
+        <li><a href="#tab2">Tab 2</a></li>
+        <li><a href="#tab3">Tab 3</a></li>    
+    </ul>    
+    
+    <div class="container">        
+        
+        <div id="tab1" class="tab_content" style="display: block;">
+            <div class="taglist">
+                Tab 1 content
+            </div>
+        </div>
+
+        <div id="tab2" class="tab_content">                                                                        
+            Tab 2 content
+        </div>
+
+        <div id="tab3" class="tab_content">
+            Tab 3 content
+        </div>    
+    
+    </div>
+</div>
+
+    <!-- ADD JS EXTERNAL FILE -->
+    <script type='text/javascript' src='js/jquery-1.12.0.min.js'></script>
+    <script type='text/javascript'>
+        $(document).ready(function(){
+            $('.tab_link li').hover(function(){
+                $(".tab_content").hide();
+                $('.tab_link li').removeClass('active');
+                $(this).addClass('active');
+                var selected_tabs = $(this).find('a').attr("href");
+                $(selected_tabs).stop().fadeIn();
+            });
+
+            $(".tab_link li a").hover(function(){
+                $(".tab_link li a").removeClass("active");
+                $(this).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
